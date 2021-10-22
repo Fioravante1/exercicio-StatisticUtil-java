@@ -3,7 +3,11 @@ package br.com.codenation;
 public class StatisticUtil {
 
 	public static int average(int[] elements) {
-		return 0;
+		int media = 0;
+		for (int element : elements) {
+			media += element;
+		}
+		return (int) ((float) media / elements.length);
 	}
 
 	public static int mode(int[] elements) {
