@@ -1,5 +1,7 @@
 package br.com.codenation;
 
+import java.util.Arrays;
+
 public class StatisticUtil {
 
 	public static int average(int[] elements) {
@@ -22,6 +24,17 @@ public class StatisticUtil {
 	}
 
 	public static int median(int[] elements) {
-		return 0;
+		Arrays.sort(elements);
+		int medianResult = 0;
+
+		if (elements.length % 2 != 0) {
+			int indexMedian = elements.length / 2;
+			medianResult = elements[indexMedian];
+		} else {
+			int value1 = elements.length / 2;
+			int value2 = elements.length / 2 - 1;
+			medianResult = (elements[value1] + elements[value2]) / 2;
+		}
+		return medianResult;
 	}
 }
