@@ -11,7 +11,14 @@ public class StatisticUtil {
 	}
 
 	public static int mode(int[] elements) {
-		return 0;
+		int frequenciaNumeros = 0;
+
+		for (int i = 1; i < elements.length; i++) {
+			if (elements[i] == elements[i - 1] && frequenciaNumeros != elements[i - 1]) {
+				frequenciaNumeros = elements[i];
+			}
+		}
+		return frequenciaNumeros;
 	}
 
 	public static int median(int[] elements) {
